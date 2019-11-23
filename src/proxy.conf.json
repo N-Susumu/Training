@@ -1,0 +1,12 @@
+{
+    "/LocalServerWebApi/*": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+    "/webHello/*": {
+        "target": "http://localhost:8081",
+        "pathReWrite": {"^/webHello": "WebHello"}
+    }
+}

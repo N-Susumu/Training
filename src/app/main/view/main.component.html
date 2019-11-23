@@ -1,0 +1,85 @@
+<div>
+    <common-header-component [title]=pageTitle></common-header-component>
+</div>
+<div class="main-div">
+    <div class="oldComponent" style="display: flex;">
+        <div class="div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="th">Title</th>
+                        <th class="th">Upload Date</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let item of oldLogContentsList">
+                    <td style="width: 70%;"><a [href]="item.link">{{item.title}}</a></td>
+                    <td style="width: 30%;"><label>{{item.uploadDate}}</label></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="rightDiv">
+        <div class="searchDiv">
+            <p>■ 過去投稿検索</p>
+            <div style="display: flex;">
+                <ng2-flatpickr [config]=exampleOptions [(ngModel)]="searchTargetOldDoc"></ng2-flatpickr>
+                <input type="button" class="commonButton" value="検索" (click)="oldDocumentSearch(searchTargetOldDoc)"/>
+            </div>
+        </div>
+        <div class="newContentsDiv">
+            <p>■ 新規投稿登録</p>
+            <div style="display: flex;">
+                <ng2-flatpickr [config]=exampleOptions></ng2-flatpickr>
+                <input type="button" class="commonButton" value="登録" />
+            </div>
+        </div>
+        <div class="newContentsDiv">
+            <p>Hellow main component!</p>
+
+            <ng2-flatpickr [config]=exampleOptions></ng2-flatpickr>
+
+            <!-- Single selection mode -->
+            <!-- <igx-calendar>
+            <ng-template igxCalendarHeader let-parts>
+                {{ parts.month.combined | titlecase }} {{parts.day.combined }} {{ parts.weekday.combined }}
+            </ng-template>
+            <ng-template igxCalendarSubheader let-parts>
+                <span class="date__el" (click)="parts.monthView()">{{ parts.month.combined }}</span>
+                <span class="date__el" (click)="parts.yearView()">{{ parts.year.combined }}</span>
+            </ng-template>
+        </igx-calendar> -->
+
+            <br>
+            <select style="margin-right: 10px;" [(ngModel)]="submitEntity.costOption">
+                <option *ngFor="let item of SELECT_OPTION" [value]=item.value>
+                    {{item.label}}
+                </option>
+            </select>
+            <input type="number" style="margin-right: 10px;" id="cost" [(ngModel)]="submitEntity.cost">
+            <input type="button" id="button1" value="TEST" (click)="submit()">
+            <ul>
+                <li>
+                    <a (click)="httpService2()" href="javascript:void(0);">
+                        <span>
+                            {{LINK_LABEL}}
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="httpService()" href="javascript:void(0);">
+                        <span>
+                            {{LINK_LABEL2}}
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="toNextPage()" href="javascript:void(0);">
+                        <span>
+                            {{NEXT_PAGE_LABEL}}
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

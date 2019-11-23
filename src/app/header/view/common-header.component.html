@@ -1,0 +1,22 @@
+<div style="padding: 0px; margin: 0px; top: 0px; left: 0px; background: gainsboro; display: flex;">
+    <img style="width: 52px; height: 52px;" src="assets/icon/reload.jpeg">
+    <label style="font-size: 30px; padding-left: 10px;">
+        {{title}}
+    </label>
+    <table style="margin: 0 0 0 auto;height: 52px;">
+        <tbody>
+            <tr>
+                <td style="border-right: none;">
+                    <a (click)="backWindow()" href="javascript:void(0);">
+                        <img style="width: 52px; height: 52px;" src="assets/icon/back.jpeg">
+                    </a>
+                </td>
+                <td style="border-left: none;">
+                    <a (click)="goWindow()" href="javascript:void(0);">
+                            <img style="width: 52px; height: 52px;" src="assets/icon/next.jpeg">
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
